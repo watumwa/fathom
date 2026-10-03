@@ -1367,6 +1367,94 @@ img {
   line-height: 1.25;
 }
 
+.audience-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.audience-page-card {
+  position: relative;
+  min-height: 250px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.audience-page-card::after {
+  position: absolute;
+  right: -58px;
+  bottom: -68px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(29, 99, 55, 0.08);
+  border-radius: 50%;
+  content: "";
+}
+
+.audience-page-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(29, 99, 55, 0.22);
+  box-shadow: var(--shadow-card);
+}
+
+.audience-page-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 35px;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--cream-100);
+  color: var(--forest-700);
+}
+
+.audience-page-card > small {
+  position: absolute;
+  top: 30px;
+  right: 28px;
+}
+
+.audience-page-card h3 {
+  margin: 0 0 10px;
+  color: var(--forest-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.audience-page-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.audience-page-cta {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 48px;
+  padding: 42px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(125deg, var(--forest-950), var(--forest-800));
+  color: var(--white);
+}
+
+.audience-page-cta .eyebrow {
+  margin-bottom: 13px;
+}
+
+.audience-page-cta h2 {
+  max-width: 670px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(31px, 4vw, 48px);
+}
+
 .featured-insight {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1816,6 +1904,15 @@ footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .audience-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .audience-page-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .footer-top {
     align-items: flex-start;
     flex-direction: column;
@@ -1995,10 +2092,15 @@ footer {
 
   .value-grid,
   .audience-cards,
+  .audience-page-grid,
   .field-row,
   .detail-list,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .audience-page-cta {
+    padding: 28px;
   }
 
   .value-card {
