@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Frontend build output
+.next/
+frontend/.next/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local environment files
+.env
+*.env.local
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/

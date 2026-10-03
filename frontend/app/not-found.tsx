@@ -1,0 +1,1 @@
+import Link from 'next/link'; export default function NotFound(){return <section className="page-hero"><div className="container"><span className="eyebrow light">404</span><h1>This page has moved beyond the farm.</h1><p>The page you requested could not be found.</p><Link className="btn btn-light" href="/">Return home</Link></div></section>}
