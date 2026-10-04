@@ -1,1 +1,51 @@
-import Image from 'next/image'; import Link from 'next/link'; export const metadata={title:'About Us'}; export default function About(){return <><section className="page-hero"><div className="container"><span className="eyebrow light">ABOUT FATHOM</span><h1>Building sustainable, market-ready agribusinesses.</h1><p>Technical expertise, business strategy and value-chain insight shaped around real commercial needs.</p></div></section><section className="section"><div className="container split"><div><span className="eyebrow">WHO WE ARE</span><h2>Practical advice. <span>Commercial thinking.</span></h2><p className="lead">Fathom Agribusinesses Limited is an agribusiness advisory company that supports coffee enterprises and SMEs in building sustainable, market-oriented, investment-ready businesses.</p><p>Our approach is practical and tailored to the unique needs of farmers, coffee enterprises, SMEs and other players across the agricultural value chain.</p></div><div className="image-frame"><Image src="/images/fathom-field-advisory.png" alt="Fathom field advisory with a coffee entrepreneur" fill sizes="(max-width: 900px) 92vw, 46vw"/></div></div></section><section className="section cream"><div className="container"><div className="value-grid"><article className="value-card"><h3>Practical Solutions</h3><p>Advice designed around real operating conditions and business priorities.</p></article><article className="value-card"><h3>Commercial Thinking</h3><p>We connect technical decisions with market and business realities.</p></article><article className="value-card"><h3>Sustainable Growth</h3><p>We focus on structures that can support stronger enterprises over time.</p></article><article className="value-card"><h3>Client-Focused Advisory</h3><p>Every engagement starts with the client’s context, objectives and constraints.</p></article></div><div className="center-action"><Link className="btn" href="/contact">Talk to an Advisor</Link></div></div></section></>}
+import Image from 'next/image';
+import Link from 'next/link';
+
+export const metadata = {title: 'About Fathom'};
+
+export default function About() {
+  return (
+    <>
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow light">About Fathom</span>
+          <h1>Advice for the people growing coffee businesses in Uganda.</h1>
+          <p>Farm knowledge and business thinking, applied to the decisions that shape an enterprise.</p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container split">
+          <div>
+            <span className="eyebrow">Who we are</span>
+            <h2>Know the crop. <span>Understand the business.</span></h2>
+            <p className="lead">
+              Fathom Agribusinesses Limited advises coffee farms, SMEs and investors working across Uganda’s agricultural value chain.
+            </p>
+            <p>
+              We help clients assess an opportunity, set priorities and turn a plan into useful next steps—from establishing a farm to preparing a business for finance or trade.
+            </p>
+          </div>
+          <div className="image-frame">
+            <Image
+              src="/images/fathom-field-advisory.png"
+              alt="A coffee grower and advisor discussing coffee cherries in the field"
+              fill
+              sizes="(max-width: 900px) 92vw, 46vw"
+            />
+          </div>
+        </div>
+      </section>
+      <section className="section cream">
+        <div className="container">
+          <div className="value-grid">
+            <article className="value-card"><h3>Start with the farm</h3><p>Ground plans in the production goals and conditions of each coffee enterprise.</p></article>
+            <article className="value-card"><h3>Make the numbers useful</h3><p>Bring operating needs, investment and business planning into the same conversation.</p></article>
+            <article className="value-card"><h3>Know the market</h3><p>Consider the product, customer and commercial requirements before committing resources.</p></article>
+            <article className="value-card"><h3>Leave with next steps</h3><p>Turn advice into clear priorities that clients and their teams can act on.</p></article>
+          </div>
+          <div className="center-action"><Link className="btn" href="/contact">Discuss your plans</Link></div>
+        </div>
+      </section>
+    </>
+  );
+}

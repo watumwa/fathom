@@ -4,11 +4,11 @@ from core.models import SiteSettings
 from services.models import Service
 from content.models import Article
 SERVICES=[
-('Coffee Farm Planning & Establishment','coffee-farm-planning','Practical advisory for entrepreneurs, farmers and investors establishing or improving coffee farms.'),
-('Coffee Product Development, Branding & Marketing Advisory','product-development-branding','Transform coffee products into compelling, market-ready brands with a commercially grounded strategy.'),
-('Value Chain-Based Capacity Building for Coffee SMEs','capacity-building','Practical programmes designed around the real management, market and operational challenges facing coffee SMEs.'),
-('Bankable Business Plan Development for SMEs','business-plan-development','Structured, realistic and commercially focused plans for decision-making, financing readiness and investment conversations.'),
-('Commodity Trade Advisory for SMEs','commodity-trade-advisory','Market-aware advisory helping commodity businesses evaluate opportunities and make informed commercial decisions.'),]
+('Coffee Farm Planning & Establishment','coffee-farm-planning','Plan the establishment or improvement of a Robusta or Arabica farm around production goals, investment and long-term viability.'),
+('Coffee Product Development, Branding & Marketing Advisory','product-development-branding','Shape coffee products for market with clear positioning, brand direction and a practical route to customers.'),
+('Value Chain-Based Capacity Building for Coffee SMEs','capacity-building','Build the management, financial and market capabilities coffee SMEs need to operate consistently and grow.'),
+('Bankable Business Plan Development for SMEs','business-plan-development','Turn an agribusiness idea into a decision-ready plan with clear operating assumptions and a credible funding case.'),
+('Commodity Trade Advisory for SMEs','commodity-trade-advisory','Assess commodity opportunities with a clearer view of market conditions, quality requirements and trade risk.'),]
 class Command(BaseCommand):
  def handle(self,*args,**kwargs):
   SiteSettings.objects.get_or_create(id=1)

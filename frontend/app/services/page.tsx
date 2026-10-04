@@ -15,8 +15,8 @@ export default async function Services() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow light">Our services</span>
-          <h1>Agribusiness expertise that moves businesses forward.</h1>
-          <p>Focused advisory support across farm planning, product development, SME capacity, business planning and commodity trade.</p>
+          <h1>Practical support for coffee enterprises, from farm plan to market.</h1>
+          <p>Five advisory services for farm establishment, coffee SMEs, business planning and commodity trade.</p>
         </div>
       </section>
       <section className="section services-section">

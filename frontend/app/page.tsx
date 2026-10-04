@@ -3,15 +3,11 @@ import Link from 'next/link';
 import {
   ArrowRight,
   ArrowUpRight,
-  BarChart3,
   BriefcaseBusiness,
   Building2,
-  FileChartColumn,
   Globe2,
-  Handshake,
   Landmark,
   Leaf,
-  Palette,
   Rocket,
   Sprout,
   Target,
@@ -20,9 +16,9 @@ import {
   Wheat,
 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
+import ServiceExplorer from '@/components/ServiceExplorer';
 import {audiences, getServices} from '@/lib/data';
 
-const serviceIcons = [Sprout, Palette, UsersRound, FileChartColumn, Handshake];
 const audienceIcons = [Sprout, Building2, BriefcaseBusiness, TrendingUp, Wheat, Rocket, UsersRound, Globe2, Landmark];
 
 export default async function Home() {
@@ -30,62 +26,46 @@ export default async function Home() {
 
   return (
     <>
-      <section className="hero">
-        <div className="hero-glow hero-glow-one" />
-        <div className="hero-glow hero-glow-two" />
-        <div className="hero-grid container">
-          <Reveal className="hero-copy">
-            <span className="eyebrow light">Fathom Agribusinesses Limited</span>
+      <section className="hero hero-cinematic">
+        <Image
+          src="/images/hero-coffee.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="hero-cinematic-image"
+        />
+        <div className="hero-cinematic-shade" />
+        <div className="hero-grid hero-cinematic-grid container">
+          <Reveal className="hero-copy hero-cinematic-copy">
+            <span className="eyebrow light">Coffee & agribusiness advisory · Uganda</span>
             <h1>
-              Build an agribusiness that is ready to <em>grow.</em>
+              Build a coffee business <em>from the ground up.</em>
             </h1>
             <p>
-              Practical coffee value-chain advisory for SMEs, investors and programmes ready to turn opportunity into a structured, market-ready enterprise.
+              From planning a Robusta or Arabica estate to preparing an SME for finance or trade, we help turn sound decisions into stronger coffee enterprises.
             </p>
             <div className="actions">
               <Link className="btn btn-gold" href="/services">
-                Explore our expertise <ArrowRight size={17} />
+                Explore our advisory <ArrowRight size={17} />
               </Link>
               <Link className="btn btn-ghost" href="/contact">
                 Talk to an advisor <ArrowUpRight size={17} />
               </Link>
             </div>
             <div className="hero-proof" aria-label="Fathom service coverage">
-              <div><strong>05</strong><span>Specialist advisory areas</span></div>
-              <div><strong>360°</strong><span>Value-chain perspective</span></div>
-              <div><strong>UG</strong><span>Rooted in East Africa</span></div>
+              <div><strong>01—05</strong><span>Practical advisory services</span></div>
+              <div><strong>Farm → market</strong><span>A connected value chain</span></div>
+              <div><strong>UG / EA</strong><span>Grounded in the region</span></div>
             </div>
-          </Reveal>
-
-          <Reveal className="hero-visual" delay={140}>
-            <div className="hero-image-shell">
-              <Image
-                src="/images/fathom-field-advisory.png"
-                alt="Agribusiness advisor and coffee entrepreneur reviewing coffee cherries on a Ugandan farm"
-                fill
-                priority
-                sizes="(max-width: 900px) 92vw, 46vw"
-                className="hero-photo"
-              />
-              <div className="hero-image-wash" />
-            </div>
-            <div className="hero-float-card hero-float-top">
-              <span><BarChart3 size={17} /></span>
-              <div><small>Commercial focus</small><strong>Plan with clarity</strong></div>
-            </div>
-            <div className="hero-float-card hero-float-bottom">
-              <span><Leaf size={17} /></span>
-              <div><small>End-to-end advisory</small><strong>From farm to market</strong></div>
-            </div>
-            <div className="hero-image-index">01 / FIELD ADVISORY</div>
           </Reveal>
         </div>
         <div className="trust-strip">
           <div className="container trust-inner">
-            <span>Technical knowledge</span>
-            <span>Value-chain expertise</span>
-            <span>Commercial discipline</span>
-            <span>Practical execution</span>
+            <span>Robusta & Arabica</span>
+            <span>Farm planning to market</span>
+            <span>Ugandan business context</span>
+            <span>Clear, practical advice</span>
           </div>
         </div>
       </section>
@@ -94,12 +74,12 @@ export default async function Home() {
         <div className="container story-grid">
           <Reveal>
             <span className="eyebrow">Who we are</span>
-            <h2>We turn sector knowledge into <span>business momentum.</span></h2>
+            <h2>Good coffee starts with <span>sound decisions.</span></h2>
             <p className="lead">
-              Fathom supports coffee enterprises and SMEs in building sustainable, market-oriented and investment-ready businesses.
+              We advise the people building coffee farms and enterprises across Uganda and East Africa.
             </p>
             <p>
-              Our work connects technical decisions to commercial outcomes—bringing structure, market insight and clear next steps to every engagement.
+              From farm establishment and SME management to finance and trade, we connect practical choices on the ground with the business they need to support.
             </p>
             <Link className="text-link" href="/about">
               Discover Fathom <ArrowRight size={16} />
@@ -107,15 +87,15 @@ export default async function Home() {
           </Reveal>
           <Reveal className="approach-panel" delay={120}>
             <div className="approach-panel-head">
-              <span>Our value-chain lens</span>
+              <span>From farm to market</span>
               <small>01—04</small>
             </div>
             <div className="approach-route">
               {[
-                ['01', 'Establish', 'Sound farm and enterprise foundations'],
-                ['02', 'Strengthen', 'Better products, operations and teams'],
-                ['03', 'Position', 'Clear brands and market direction'],
-                ['04', 'Scale', 'Finance-ready plans and trade decisions'],
+                ['01', 'Plan', 'Production, investment and farm priorities'],
+                ['02', 'Build', 'Products, teams and business systems'],
+                ['03', 'Position', 'Brand, customer and market direction'],
+                ['04', 'Trade', 'Finance plans and informed market decisions'],
               ].map(([number, title, copy]) => (
                 <div className="approach-step" key={number}>
                   <span>{number}</span>
@@ -133,32 +113,12 @@ export default async function Home() {
           <Reveal className="section-head">
             <div>
               <span className="eyebrow">Our advisory expertise</span>
-              <h2>Focused support for every <span>critical growth decision.</span></h2>
+              <h2>Practical advice for the <span>decisions that matter.</span></h2>
             </div>
-            <p>Five connected areas of expertise, shaped around commercial reality and built to move your enterprise forward.</p>
+            <p>Choose the challenge in front of you. See the work, the expected outputs and where to begin.</p>
           </Reveal>
 
-          <div className="service-bento">
-            {services.map((service: any, index: number) => {
-              const Icon = serviceIcons[index % serviceIcons.length];
-              return (
-                <Reveal className={`service-bento-item service-bento-item-${index + 1}`} delay={index * 70} key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="service-bento-card">
-                    <div className="service-card-top">
-                      <span className="service-icon"><Icon size={23} /></span>
-                      <small>0{index + 1}</small>
-                    </div>
-                    <div className="service-card-copy">
-                      {index === 3 && <span className="featured-label">Financing & investment readiness</span>}
-                      <h3>{service.title}</h3>
-                      <p>{service.short_description}</p>
-                    </div>
-                    <span className="service-link">Explore service <ArrowUpRight size={17} /></span>
-                  </Link>
-                </Reveal>
-              );
-            })}
-          </div>
+          <ServiceExplorer services={services} />
         </div>
       </section>
 
@@ -167,8 +127,8 @@ export default async function Home() {
         <div className="container audience-layout">
           <Reveal className="audience-intro">
             <span className="eyebrow light">Who we serve</span>
-            <h2>Built for the people <span>moving agriculture forward.</span></h2>
-            <p>We meet businesses where they are—from first investment decisions to market expansion and finance readiness.</p>
+            <h2>For the people building <span>coffee businesses.</span></h2>
+            <p>From growers and processors to investors, SMEs and organisations working across the value chain.</p>
             <Link className="btn btn-light" href="/who-we-serve">
               Explore our clients <ArrowRight size={17} />
             </Link>
@@ -193,16 +153,16 @@ export default async function Home() {
           <Reveal className="section-head why-head">
             <div>
               <span className="eyebrow">Why Fathom</span>
-              <h2>Advice designed to perform <span>beyond the presentation.</span></h2>
+              <h2>Good advice should hold up <span>outside the meeting room.</span></h2>
             </div>
-            <p>Clear thinking, grounded analysis and practical support that stays connected to your operating reality.</p>
+            <p>Recommendations should make sense for the farm, the team, the numbers and the market—not only on paper.</p>
           </Reveal>
           <div className="value-grid">
             {[
-              [Leaf, 'Technical knowledge', 'Grounded advice for the realities of coffee production and agribusiness.'],
-              [BriefcaseBusiness, 'Business strategy', 'Commercial models that connect ambition to practical execution.'],
-              [TrendingUp, 'Market insight', 'Sharper positioning and better-informed growth decisions.'],
-              [Target, 'Practical delivery', 'Structured next steps focused on real business outcomes.'],
+              [Leaf, 'Coffee-grounded', 'Advice shaped around the distinct realities of Robusta and Arabica enterprises.'],
+              [BriefcaseBusiness, 'Business-minded', 'Plans that account for operating needs, investment and the route to market.'],
+              [TrendingUp, 'Market-aware', 'Clearer thinking about customers, quality expectations and commercial choices.'],
+              [Target, 'Practical to use', 'Defined outputs and next steps your team can act on.'],
             ].map(([Icon, title, copy], index) => {
               const ValueIcon = Icon as typeof Leaf;
               return (
@@ -225,10 +185,10 @@ export default async function Home() {
         <div className="container cta-grid">
           <Reveal>
             <span className="eyebrow light">Start a conversation</span>
-            <h2>Bring structure to your next agribusiness opportunity.</h2>
+            <h2>Planning a coffee investment or strengthening an existing business?</h2>
           </Reveal>
           <Reveal className="cta-side" delay={100}>
-            <p>Tell us what you are building, improving or preparing for. We’ll begin with your context and the commercial decision in front of you.</p>
+            <p>Tell us where you are in the journey. We’ll start with the farm or business, the decision ahead and the support that would be useful.</p>
             <Link className="btn btn-gold" href="/contact">
               Talk to an advisor <ArrowRight size={17} />
             </Link>

@@ -18,14 +18,26 @@ export const metadata = {title: 'Who We Serve'};
 
 const audienceIcons = [Sprout, Building2, BriefcaseBusiness, TrendingUp, Wheat, Rocket, UsersRound, Globe2, Landmark];
 
+const audienceDescriptions: Record<string, string> = {
+  'Coffee farmers & farm investors': 'Farm establishment, improvement priorities and production planning.',
+  'Coffee SMEs': 'Business planning, stronger management and clearer routes to market.',
+  'Agribusiness entrepreneurs': 'A practical path from opportunity assessment to a workable business plan.',
+  'Commodity traders': 'Market conditions, commercial requirements and trade decisions.',
+  'Food & agricultural enterprises': 'Product development, positioning and business planning.',
+  'Start-ups & growing SMEs': 'A workable operating plan and priorities for the next stage of the business.',
+  'Cooperatives & producer groups': 'Practical support for members, operations and market readiness.',
+  'Development programmes & organisations': 'Value-chain insight to shape useful enterprise support.',
+  'Businesses seeking financing or investment': 'Business plans and financial assumptions prepared for funding discussions.',
+};
+
 export default function WhoWeServe() {
   return (
     <>
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow light">Who we serve</span>
-          <h1>Advisory built around real agribusiness challenges.</h1>
-          <p>We work across the coffee and agricultural value chain with enterprises at different stages of growth.</p>
+          <h1>For the people building coffee and agribusiness enterprises.</h1>
+          <p>We work with farms, SMEs, investors and organisations across Uganda’s coffee value chain.</p>
         </div>
       </section>
       <section className="section">
@@ -33,9 +45,9 @@ export default function WhoWeServe() {
           <Reveal className="section-head">
             <div>
               <span className="eyebrow">Our clients</span>
-              <h2>Different ambitions. One need for <span>clear direction.</span></h2>
+              <h2>Different businesses. <span>Decisions that matter.</span></h2>
             </div>
-            <p>Our advice is tailored to your operating context, priorities and next commercial decision.</p>
+            <p>Support shaped around the work each client needs to do next.</p>
           </Reveal>
           <div className="audience-page-grid">
             {audiences.map((audience, index) => {
@@ -45,7 +57,7 @@ export default function WhoWeServe() {
                   <span className="audience-page-icon"><Icon size={22} /></span>
                   <small>0{index + 1}</small>
                   <h3>{audience}</h3>
-                  <p>Practical, commercially focused support shaped around your priorities and stage of growth.</p>
+                  <p>{audienceDescriptions[audience]}</p>
                 </Reveal>
               );
             })}
