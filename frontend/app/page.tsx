@@ -41,8 +41,8 @@ export default async function Home() {
     <>
       <section className="hero hero-cinematic">
         <Image
-          src="/images/fathom-field-advisory.png"
-          alt="A coffee grower and advisor inspecting ripe coffee cherries on a Ugandan farm"
+          src="/images/coffee-harvest-hero.jpeg"
+          alt="Hands harvesting ripe coffee cherries among green leaves"
           fill
           priority
           sizes="100vw"
