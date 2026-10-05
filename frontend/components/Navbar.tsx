@@ -14,7 +14,7 @@ export default function Navbar(){
   return <header className={`nav ${scrolled?'nav-scrolled':''}`}>
     <div className="nav-inner">
       <Link href="/" className="brand" aria-label="Fathom Agribusinesses Limited home">
-        <span className="brand-mark"><Image src="/images/fathom-logo.jpg" alt="" width={52} height={52}/></span>
+        <span className="brand-mark"><Image src="/images/fathom-logo-official.png" alt="" width={52} height={52}/></span>
         <span className="brand-copy"><b>FATHOM</b><small>AGRIBUSINESSES LIMITED</small></span>
       </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">{links.map(([h,l])=><Link className={pathname===h?'active':''} key={h} href={h}>{l}</Link>)}<Link className="btn btn-small nav-cta" href="/contact">Talk to an Advisor <ArrowUpRight size={15}/></Link></nav>
