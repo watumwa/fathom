@@ -3,8 +3,6 @@ import Image from 'next/image';
 import {ArrowUpRight, Phone} from 'lucide-react';
 export default function Footer(){return <footer>
   <div className="footer-accent"/>
-  <div className="container footer-top"><div><span className="eyebrow light">Talk with Fathom</span><h2>Planning a coffee farm or strengthening an enterprise?</h2></div><Link className="btn btn-gold" href="/contact">Discuss your plans <ArrowUpRight size={18}/></Link></div>
-  <div className="footer-rule"/>
   <div className="footer-grid container">
     <div className="footer-brand"><div className="footer-brand-lockup"><Image className="footer-logo" src="/images/fathom-logo.jpg" alt="Fathom Agribusinesses Limited logo" width={76} height={76}/><div><strong>FATHOM</strong><small>AGRIBUSINESSES LIMITED</small></div></div><p>Coffee and agribusiness advisory for farms, SMEs and investors in Uganda.</p><span className="footer-tagline">From farm plan to market decision.</span></div>
     <div><h4>Company</h4><Link href="/about">About Fathom</Link><Link href="/who-we-serve">Who We Serve</Link><Link href="/insights">Insights</Link><Link href="/contact">Contact</Link></div>

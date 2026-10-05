@@ -1,9 +1,9 @@
 'use client';
 
-import {useState} from 'react';
+import {useState, type CSSProperties} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {ArrowUpRight, Check} from 'lucide-react';
+import {ArrowUpRight, Leaf} from 'lucide-react';
 import {serviceVisuals, type Service} from '@/lib/data';
 
 type ServiceDetail = {
@@ -79,13 +79,15 @@ export default function ServiceExplorer({services}: {services: Service[]}) {
         ))}
       </div>
       <article className="service-feature" aria-live="polite">
-        <div className="service-feature-copy">
+        <div className="service-feature-copy" key={selected.slug}>
           <span className="service-feature-kicker">0{selectedIndex + 1} / 0{services.length} &nbsp;·&nbsp; {selected.title}</span>
           <h3>{detail.title}</h3>
           <p>{detail.summary}</p>
           <ul>
-            {detail.deliverables.map((deliverable) => (
-              <li key={deliverable}><Check aria-hidden="true" size={16} />{deliverable}</li>
+            {detail.deliverables.map((deliverable, index) => (
+              <li key={deliverable} style={{'--item-delay': `${index * 90}ms`} as CSSProperties}>
+                <span className="service-check"><Leaf aria-hidden="true" size={13} /></span>{deliverable}
+              </li>
             ))}
           </ul>
           <Link className="text-link" href={`/services/${selected.slug}`}>

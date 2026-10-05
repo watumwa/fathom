@@ -16,10 +16,23 @@ import {
   Wheat,
 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
+import IntentCTA from '@/components/IntentCTA';
+import JourneyExplorer from '@/components/JourneyExplorer';
 import ServiceExplorer from '@/components/ServiceExplorer';
 import {audiences, getServices} from '@/lib/data';
 
 const audienceIcons = [Sprout, Building2, BriefcaseBusiness, TrendingUp, Wheat, Rocket, UsersRound, Globe2, Landmark];
+const audienceSummaries = [
+  'Farm establishment, improvement and production planning.',
+  'Stronger management, business planning and routes to market.',
+  'From opportunity assessment to a workable enterprise plan.',
+  'Market conditions, quality requirements and trade decisions.',
+  'Product development, positioning and business planning.',
+  'Operating priorities for the next stage of growth.',
+  'Practical support for members, operations and markets.',
+  'Value-chain insight for stronger enterprise programmes.',
+  'Financing-ready plans and credible operating assumptions.',
+];
 
 export default async function Home() {
   const services = await getServices();
@@ -53,12 +66,25 @@ export default async function Home() {
                 Talk to an advisor <ArrowUpRight size={17} />
               </Link>
             </div>
-            <div className="hero-proof" aria-label="Fathom service coverage">
-              <div><strong>01—05</strong><span>Practical advisory services</span></div>
-              <div><strong>Farm → market</strong><span>A connected value chain</span></div>
-              <div><strong>UG / EA</strong><span>Grounded in the region</span></div>
-            </div>
           </Reveal>
+        </div>
+        <div className="hero-floating-stats" aria-label="Fathom service coverage">
+          <div className="hero-stat-card hero-stat-services">
+            <span><BriefcaseBusiness size={17} /></span>
+            <small>01—05</small>
+            <strong>Advisory services</strong>
+          </div>
+          <div className="hero-stat-card hero-stat-route">
+            <span><TrendingUp size={17} /></span>
+            <small>Connected thinking</small>
+            <strong>Farm → Market</strong>
+            <i className="hero-route-line" />
+          </div>
+          <div className="hero-stat-card hero-stat-region">
+            <span><Globe2 size={17} /></span>
+            <small>Regional context</small>
+            <strong>Uganda / East Africa</strong>
+          </div>
         </div>
         <div className="trust-strip">
           <div className="container trust-inner">
@@ -70,7 +96,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="section story-section">
+      <section className="section story-section" id="journey">
         <div className="container story-grid">
           <Reveal>
             <span className="eyebrow">Who we are</span>
@@ -85,39 +111,13 @@ export default async function Home() {
               Discover Fathom <ArrowRight size={16} />
             </Link>
           </Reveal>
-          <Reveal className="approach-panel" delay={120}>
-            <div className="approach-image">
-              <Image
-                src="/images/coffee-cup.webp"
-                alt="Fresh espresso being prepared"
-                fill
-                sizes="(max-width: 900px) 92vw, 46vw"
-              />
-              <span>Product · Brand · Market</span>
-            </div>
-            <div className="approach-panel-head">
-              <span>From farm to market</span>
-              <small>01—04</small>
-            </div>
-            <div className="approach-route">
-              {[
-                ['01', 'Plan', 'Production, investment and farm priorities'],
-                ['02', 'Build', 'Products, teams and business systems'],
-                ['03', 'Position', 'Brand, customer and market direction'],
-                ['04', 'Trade', 'Finance plans and informed market decisions'],
-              ].map(([number, title, copy]) => (
-                <div className="approach-step" key={number}>
-                  <span>{number}</span>
-                  <div><strong>{title}</strong><p>{copy}</p></div>
-                  <ArrowUpRight size={17} />
-                </div>
-              ))}
-            </div>
+          <Reveal delay={120}>
+            <JourneyExplorer />
           </Reveal>
         </div>
       </section>
 
-      <section className="section services-section">
+      <section className="section services-section" id="advisory">
         <div className="container">
           <Reveal className="section-head">
             <div>
@@ -131,7 +131,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="section audience-section">
+      <section className="section audience-section" id="clients">
         <div className="audience-orbit" />
         <div className="container audience-layout">
           <Reveal className="audience-intro">
@@ -142,14 +142,17 @@ export default async function Home() {
               Explore our clients <ArrowRight size={17} />
             </Link>
           </Reveal>
-          <div className="audience-chips">
+          <div className="audience-bento">
             {audiences.map((audience, index) => {
               const Icon = audienceIcons[index % audienceIcons.length];
               return (
-                <Reveal className="audience-chip" delay={(index % 3) * 60} key={audience}>
-                  <span><Icon size={20} /></span>
-                  <strong>{audience}</strong>
-                  <ArrowUpRight className="audience-arrow" size={15} />
+                <Reveal className={`audience-tile-wrap audience-tile-${index + 1}`} delay={(index % 4) * 55} key={audience}>
+                  <Link className="audience-tile" href="/who-we-serve">
+                    <span className="audience-tile-icon"><Icon size={21} /></span>
+                    <small>0{index + 1}</small>
+                    <strong>{audience}</strong>
+                    <p>{audienceSummaries[index]}</p>
+                  </Link>
                 </Reveal>
               );
             })}
@@ -157,7 +160,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="section why-section">
+      <section className="section why-section" id="why-fathom">
         <div className="container">
           <Reveal className="section-head why-head">
             <div>
@@ -189,21 +192,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="cta">
-        <div className="cta-pattern" />
-        <div className="container cta-grid">
-          <Reveal>
-            <span className="eyebrow light">Start a conversation</span>
-            <h2>Planning a coffee investment or strengthening an existing business?</h2>
-          </Reveal>
-          <Reveal className="cta-side" delay={100}>
-            <p>Tell us where you are in the journey. We’ll start with the farm or business, the decision ahead and the support that would be useful.</p>
-            <Link className="btn btn-gold" href="/contact">
-              Talk to an advisor <ArrowRight size={17} />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <IntentCTA />
     </>
   );
 }

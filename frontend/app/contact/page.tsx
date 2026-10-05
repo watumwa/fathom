@@ -4,7 +4,15 @@ import {Phone, MessageCircle} from 'lucide-react';
 
 export const metadata = {title: 'Contact'};
 
-export default function Contact() {
+const intentServices: Record<string, string> = {
+  investment: 'Bankable Business Plan Development for SMEs',
+  farm: 'Coffee Farm Planning & Establishment',
+};
+
+export default async function Contact({searchParams}: {searchParams: Promise<{intent?: string}>}) {
+  const {intent} = await searchParams;
+  const initialService = intent ? intentServices[intent] ?? '' : '';
+
   return (
     <>
       <PageHero
@@ -27,7 +35,7 @@ export default function Contact() {
               <a className="contact-line" href="tel:+256700389412"><Phone /> <span><small>Alternative</small>+256 700 389 412</span></a>
             </div>
           </div>
-          <ContactForm />
+          <ContactForm initialService={initialService} />
         </div>
       </section>
     </>
