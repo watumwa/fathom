@@ -1,7 +1,8 @@
 import {notFound} from 'next/navigation';
 import Link from 'next/link';
 import {Check} from 'lucide-react';
-import {services} from '@/lib/data';
+import PageHero from '@/components/PageHero';
+import {services, serviceVisuals} from '@/lib/data';
 
 export async function generateStaticParams() {
   return services.map(({slug}) => ({slug}));
@@ -40,16 +41,19 @@ export default async function Detail({params}: {params: Promise<{slug: string}>}
   const service = services.find((item) => item.slug === slug);
 
   if (!service) notFound();
+  const visual = serviceVisuals[service.slug] ?? serviceVisuals['coffee-farm-planning'];
 
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow light">Fathom advisory</span>
-          <h1>{service.title}</h1>
-          <p>{service.short_description}</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Fathom advisory"
+        title={service.title}
+        description={service.short_description}
+        image={visual.src}
+        imageAlt={visual.alt}
+        imagePosition={visual.position}
+        imageScale={visual.heroScale}
+      />
       <section className="section">
         <div className="container narrow">
           <span className="eyebrow">What we can work on</span>

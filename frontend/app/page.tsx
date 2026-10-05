@@ -28,12 +28,12 @@ export default async function Home() {
     <>
       <section className="hero hero-cinematic">
         <Image
-          src="/images/hero-coffee.webp"
-          alt=""
+          src="/images/fathom-field-advisory.png"
+          alt="A coffee grower and advisor inspecting ripe coffee cherries on a Ugandan farm"
           fill
           priority
           sizes="100vw"
-          className="hero-cinematic-image"
+          className="hero-cinematic-image hero-field-image"
         />
         <div className="hero-cinematic-shade" />
         <div className="hero-grid hero-cinematic-grid container">
@@ -86,6 +86,15 @@ export default async function Home() {
             </Link>
           </Reveal>
           <Reveal className="approach-panel" delay={120}>
+            <div className="approach-image">
+              <Image
+                src="/images/coffee-cup.webp"
+                alt="Fresh espresso being prepared"
+                fill
+                sizes="(max-width: 900px) 92vw, 46vw"
+              />
+              <span>Product · Brand · Market</span>
+            </div>
             <div className="approach-panel-head">
               <span>From farm to market</span>
               <small>01—04</small>

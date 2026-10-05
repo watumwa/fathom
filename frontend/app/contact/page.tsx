@@ -1,1 +1,35 @@
-import ContactForm from '@/components/ContactForm'; import {Phone,MessageCircle} from 'lucide-react'; export const metadata={title:'Contact'}; export default function Contact(){return <><section className="page-hero"><div className="container"><span className="eyebrow light">Contact Fathom</span><h1>Let’s talk about your coffee business.</h1><p>Share what you are planning or working through. We’ll start with your priorities and the decision ahead.</p></div></section><section className="section"><div className="container contact-grid"><div><span className="eyebrow">Start a conversation</span><h2>Talk through <span>your next step.</span></h2><p className="lead">Farm planning, product development, SME capability, business plans or commodity trade—we’re ready to hear what you’re working on.</p><a className="contact-line" href="tel:+256783769114"><Phone/> <span><small>CALL US</small>+256 783 769 114</span></a><a className="contact-line" href="https://wa.me/256783769114" target="_blank" rel="noreferrer"><MessageCircle/> <span><small>WHATSAPP</small>+256 783 769 114</span></a><a className="contact-line" href="tel:+256700389412"><Phone/> <span><small>ALTERNATIVE</small>+256 700 389 412</span></a></div><ContactForm/></div></section></>}
+import ContactForm from '@/components/ContactForm';
+import PageHero from '@/components/PageHero';
+import {Phone, MessageCircle} from 'lucide-react';
+
+export const metadata = {title: 'Contact'};
+
+export default function Contact() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Contact Fathom"
+        title="Let’s talk about your coffee business."
+        description="Share what you are planning or working through. We’ll start with your priorities and the decision ahead."
+        image="/images/fathom-field-advisory.png"
+        imageAlt="A coffee advisor and grower discussing a crop in the field"
+        imagePosition="center 46%"
+      />
+      <section className="section contact-section">
+        <div className="container contact-grid">
+          <div className="contact-intro">
+            <span className="eyebrow">Start a conversation</span>
+            <h2>Talk through <span>your next step.</span></h2>
+            <p className="lead">Farm planning, product development, SME capability, business plans or commodity trade—we’re ready to hear what you’re working on.</p>
+            <div className="contact-details">
+              <a className="contact-line" href="tel:+256783769114"><Phone /> <span><small>Call us</small>+256 783 769 114</span></a>
+              <a className="contact-line" href="https://wa.me/256783769114" target="_blank" rel="noreferrer"><MessageCircle /> <span><small>WhatsApp</small>+256 783 769 114</span></a>
+              <a className="contact-line" href="tel:+256700389412"><Phone /> <span><small>Alternative</small>+256 700 389 412</span></a>
+            </div>
+          </div>
+          <ContactForm />
+        </div>
+      </section>
+    </>
+  );
+}

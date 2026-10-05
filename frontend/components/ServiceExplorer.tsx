@@ -1,9 +1,10 @@
 'use client';
 
 import {useState} from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import {ArrowUpRight, Check} from 'lucide-react';
-import type {Service} from '@/lib/data';
+import {serviceVisuals, type Service} from '@/lib/data';
 
 type ServiceDetail = {
   title: string;
@@ -58,6 +59,7 @@ export default function ServiceExplorer({services}: {services: Service[]}) {
     summary: selected.short_description,
     deliverables: ['A clear assessment of your priorities', 'Practical recommendations', 'Defined next steps'],
   };
+  const visual = serviceVisuals[selected.slug] ?? serviceVisuals['coffee-farm-planning'];
 
   return (
     <div className="service-explorer">
@@ -91,6 +93,15 @@ export default function ServiceExplorer({services}: {services: Service[]}) {
           </Link>
         </div>
         <div className="service-feature-note">
+          <Image
+            key={visual.src}
+            src={visual.src}
+            alt={visual.alt}
+            fill
+            sizes="(max-width: 640px) 100vw, 28vw"
+            style={{objectPosition: visual.position}}
+          />
+          <span className="service-feature-image-shade" />
           <span className="service-feature-mark">F.</span>
           <p>Clear advice for decisions that shape the farm, the business and its market.</p>
           <span className="service-feature-region">UGANDA&nbsp; / &nbsp;EAST AFRICA</span>

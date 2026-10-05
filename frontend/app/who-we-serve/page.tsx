@@ -12,6 +12,7 @@ import {
   Wheat,
 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
+import PageHero from '@/components/PageHero';
 import {audiences} from '@/lib/data';
 
 export const metadata = {title: 'Who We Serve'};
@@ -33,13 +34,15 @@ const audienceDescriptions: Record<string, string> = {
 export default function WhoWeServe() {
   return (
     <>
-      <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow light">Who we serve</span>
-          <h1>For the people building coffee and agribusiness enterprises.</h1>
-          <p>We work with farms, SMEs, investors and organisations across Uganda’s coffee value chain.</p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Who we serve"
+        title="For the people building coffee and agribusiness enterprises."
+        description="We work with farms, SMEs, investors and organisations across Uganda’s coffee value chain."
+        image="/images/coffee-farm.webp"
+        imageAlt="Coffee cherries ripening on a coffee farm"
+        imagePosition="center top"
+        imageScale={1.7}
+      />
       <section className="section">
         <div className="container">
           <Reveal className="section-head">

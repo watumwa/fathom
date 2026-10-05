@@ -1,1 +1,17 @@
-import Link from 'next/link'; export default function NotFound(){return <section className="page-hero"><div className="container"><span className="eyebrow light">404</span><h1>This page has moved beyond the farm.</h1><p>The page you requested could not be found.</p><Link className="btn btn-light" href="/">Return home</Link></div></section>}
+import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+
+export default function NotFound() {
+  return (
+    <PageHero
+      eyebrow="404"
+      title="This page has moved beyond the farm."
+      description="The page you requested could not be found."
+      image="/images/coffee-farm.webp"
+      imageAlt="Coffee cherries on a coffee farm"
+      imageScale={1.7}
+    >
+      <Link className="btn btn-light" href="/">Return home</Link>
+    </PageHero>
+  );
+}
