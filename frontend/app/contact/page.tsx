@@ -19,7 +19,7 @@ export default async function Contact({searchParams}: {searchParams: Promise<{in
         eyebrow="Contact Fathom"
         title="Let’s talk about your coffee business."
         description="Share what you are planning or working through. We’ll start with your priorities and the decision ahead."
-        image="/images/fathom-field-advisory.png"
+        image="/images/photography/business-advisory.webp"
         imageAlt="A coffee advisor and grower discussing a crop in the field"
         imagePosition="center 46%"
       />

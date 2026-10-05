@@ -14,6 +14,9 @@ import {
   TrendingUp,
   UsersRound,
   Wheat,
+  CheckCircle2,
+  MapPinned,
+  Layers3,
 } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import IntentCTA from '@/components/IntentCTA';
@@ -41,7 +44,7 @@ export default async function Home() {
     <>
       <section className="hero hero-cinematic">
         <Image
-          src="/images/coffee-harvest-hero.jpeg"
+          src="/images/photography/coffee-harvest.webp"
           alt="Hands harvesting ripe coffee cherries among green leaves"
           fill
           priority
@@ -156,6 +159,39 @@ export default async function Home() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="proof-band" aria-label="Fathom advisory strengths">
+        <div className="container proof-band-grid">
+          {[
+            [BriefcaseBusiness, '05', 'Advisory disciplines', 'One connected view across farm, product, capability, finance and trade.'],
+            [Layers3, 'Farm → Market', 'Connected decisions', 'Advice that considers what happens before and after the decision in front of you.'],
+            [MapPinned, 'Uganda', 'Grounded context', 'Commercial recommendations shaped around local operating realities and East African markets.'],
+            [CheckCircle2, 'Clear outputs', 'Built to be used', 'Defined recommendations, deliverables and next steps—not a report that sits on a shelf.'],
+          ].map(([Icon, metric, title, copy], index) => {
+            const ProofIcon = Icon as typeof BriefcaseBusiness;
+            return <Reveal delay={index * 60} key={title as string}><article className="proof-item"><ProofIcon size={20}/><strong>{metric as string}</strong><h3>{title as string}</h3><p>{copy as string}</p></article></Reveal>;
+          })}
+        </div>
+      </section>
+
+      <section className="section process-section" id="process">
+        <div className="container process-layout">
+          <Reveal className="process-copy">
+            <span className="eyebrow">How we work</span>
+            <h2>From the question to a <span>decision you can act on.</span></h2>
+            <p className="lead">A disciplined advisory process keeps the work practical, focused and connected to the commercial outcome.</p>
+            <Link className="text-link" href="/contact">Start with your challenge <ArrowRight size={16}/></Link>
+          </Reveal>
+          <div className="process-steps">
+            {[
+              ['01','Discover','Clarify the goal, constraints, context and decision that needs to be made.'],
+              ['02','Assess','Examine the farm, business, product, market or investment assumptions that matter.'],
+              ['03','Design','Turn the evidence into a practical plan, model, recommendation or route forward.'],
+              ['04','Activate','Define priorities, deliverables and next actions so the work can move into implementation.'],
+            ].map(([n,t,c],i)=><Reveal delay={i*70} key={n}><article className="process-step"><span>{n}</span><div><h3>{t}</h3><p>{c}</p></div></article></Reveal>)}
           </div>
         </div>
       </section>

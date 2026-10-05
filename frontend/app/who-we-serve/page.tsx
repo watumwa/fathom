@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -38,10 +39,10 @@ export default function WhoWeServe() {
         eyebrow="Who we serve"
         title="For the people building coffee and agribusiness enterprises."
         description="We work with farms, SMEs, investors and organisations across Uganda’s coffee value chain."
-        image="/images/coffee-farm.webp"
+        image="/images/photography/farmer-training.webp"
         imageAlt="Coffee cherries ripening on a coffee farm"
         imagePosition="center top"
-        imageScale={1.7}
+        imageScale={1.08}
       />
       <section className="section">
         <div className="container">
@@ -65,6 +66,17 @@ export default function WhoWeServe() {
               );
             })}
           </div>
+          <Reveal className="client-visual-band">
+            <div className="client-visual-copy">
+              <span className="eyebrow light">Across the value chain</span>
+              <h2>One sector. Different ambitions.</h2>
+              <p>Whether the immediate question is production, management, financing or trade, the work starts with the realities of the enterprise.</p>
+            </div>
+            <div className="client-visual-images">
+              <div><Image src="/images/photography/coffee-harvest.webp" alt="Coffee harvesting in Uganda" fill sizes="(max-width: 900px) 46vw, 24vw" /></div>
+              <div><Image src="/images/photography/business-advisory.webp" alt="Field advisory with a coffee grower" fill sizes="(max-width: 900px) 46vw, 24vw" /></div>
+            </div>
+          </Reveal>
           <Reveal className="audience-page-cta">
             <div><span className="eyebrow">Not sure where to begin?</span><h2>Start with the decision in front of you.</h2></div>
             <Link className="btn btn-gold" href="/contact">Talk to an advisor <ArrowRight size={17} /></Link>

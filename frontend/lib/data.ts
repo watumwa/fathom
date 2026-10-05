@@ -9,11 +9,11 @@ export const services:Service[]=[
 ];
 export const audiences=['Coffee farmers & farm investors','Coffee SMEs','Agribusiness entrepreneurs','Commodity traders','Food & agricultural enterprises','Start-ups & growing SMEs','Cooperatives & producer groups','Development programmes & organisations','Businesses seeking financing or investment'];
 export const serviceVisuals:Record<string,ServiceVisual>={
-  'coffee-farm-planning':{src:'/images/coffee-farm.webp',alt:'Coffee cherries ripening on a healthy coffee plant',position:'center top',heroScale:1.7},
-  'product-development-branding':{src:'/images/coffee-cup.webp',alt:'Fresh espresso being prepared',position:'center top',heroScale:1.7},
-  'capacity-building':{src:'/images/coffee-cherries.webp',alt:'Roasted coffee moving through processing equipment',position:'center top',heroScale:1.7},
-  'business-plan-development':{src:'/images/fathom-field-advisory.png',alt:'A coffee grower and advisor reviewing a crop in the field',position:'center 43%',heroScale:1.015},
-  'commodity-trade-advisory':{src:'/images/coffee-processing.webp',alt:'Roasted coffee beans being handled after processing',position:'right top',heroScale:1.7},
+  'coffee-farm-planning':{src:'/images/photography/coffee-harvest.webp',alt:'Coffee farmer selectively harvesting ripe cherries',position:'center center',heroScale:1.08},
+  'product-development-branding':{src:'/images/photography/product-branding.webp',alt:'Coffee product development and market positioning session',position:'center center',heroScale:1.08},
+  'capacity-building':{src:'/images/photography/farmer-training.webp',alt:'Practical coffee value-chain capacity building session',position:'center center',heroScale:1.08},
+  'business-plan-development':{src:'/images/photography/business-advisory.webp',alt:'Agribusiness advisory and business planning meeting',position:'center center',heroScale:1.08},
+  'commodity-trade-advisory':{src:'/images/photography/commodity-warehouse.webp',alt:'Coffee commodity warehouse and trade operations',position:'center center',heroScale:1.08},
 };
 export const API=process.env.NEXT_PUBLIC_API_URL||'http://127.0.0.1:8000/api';
 export async function getServices(){try{const r=await fetch(`${API}/services/`,{next:{revalidate:60}});if(r.ok)return await r.json()}catch{}return services}

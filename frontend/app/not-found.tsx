@@ -7,7 +7,7 @@ export default function NotFound() {
       eyebrow="404"
       title="This page has moved beyond the farm."
       description="The page you requested could not be found."
-      image="/images/coffee-farm.webp"
+      image="/images/photography/coffee-landscape.webp"
       imageAlt="Coffee cherries on a coffee farm"
       imageScale={1.7}
     >

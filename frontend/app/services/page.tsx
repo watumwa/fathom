@@ -18,10 +18,10 @@ export default async function Services() {
         eyebrow="Our services"
         title="Practical support for coffee enterprises, from farm plan to market."
         description="Five advisory services for farm establishment, coffee SMEs, business planning and commodity trade."
-        image="/images/coffee-cup.webp"
+        image="/images/photography/coffee-landscape.webp"
         imageAlt="Coffee product being prepared"
         imagePosition="center top"
-        imageScale={1.7}
+        imageScale={1.08}
       />
       <section className="section services-section">
         <div className="container">
